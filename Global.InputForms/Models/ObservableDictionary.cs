@@ -8,10 +8,7 @@ namespace Global.InputForms.Models
     public sealed class ObservableDictionary<TKey, TValue> : Dictionary<TKey, TValue>, INotifyCollectionChanged,
         INotifyPropertyChanged
     {
-        public ObservableDictionary()
-        {
-        }
-
+      
         public ObservableDictionary(int capacity) : base(capacity)
         {
         }
@@ -61,6 +58,7 @@ namespace Global.InputForms.Models
 
         public new void Add(TKey key, TValue value)
         {
+
             if (ContainsKey(key)) return;
 
             var item = new KeyValuePair<TKey, TValue>(key, value);
